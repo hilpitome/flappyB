@@ -15,7 +15,7 @@ public class FlappyBird implements ActionListener
 {
 	public static FlappyBird FlappyBird;
 	
-	public final int WIDTH=500, HEIGHT=600;
+	public final int WIDTH=800, HEIGHT=800;
 	
 	public Renderer renderer;
 	
@@ -38,7 +38,7 @@ public class FlappyBird implements ActionListener
 		jframe.add(renderer);
 		jframe.setDefaultCloseOperation(jframe.EXIT_ON_CLOSE);
 		jframe.setSize(WIDTH, HEIGHT);
-		jframe.setResizable(false);
+//		jframe.setResizable(false);
 		jframe.setVisible(true);
 		
 		bird = new Rectangle(WIDTH/2-10, HEIGHT/2-10,10,20);
@@ -101,6 +101,11 @@ public class FlappyBird implements ActionListener
 			
 			g.setColor(Color.red);
 			g.fillRect(bird.x, bird.y, bird.width, bird.height);
+			
+			for (Rectangle column: columns)
+			{
+				paintColumn(g, column);
+			}
 			
 	}
  
